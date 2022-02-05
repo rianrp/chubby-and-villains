@@ -1,5 +1,5 @@
-const teste = localStorage.getItem('escolha');
-alert("Reporte bugs para uma melhor experiência no game!!");
+var teste = "teste3.png";
+alert("foto", teste);
 var carregamento = 0;
 var element = document.getElementById("header");
 
