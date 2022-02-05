@@ -1,5 +1,4 @@
-const teste = localStorage.getItem('escolha');
-alert("Reporte bugs para uma melhor experiência no game!!");
+var teste = "teste3.png";
 var carregamento = 0;
 var element = document.getElementById("header");
 
@@ -98,7 +97,7 @@ var player = new b5.Actor();
    Vazio.w = 32;
    Vazio.h = 32;
    scene.addActor(Vazio);
-   Vazio.bitmap = new b5.Bitmap("background", "void.png", true);
+   Vazio.bitmap = new b5.Bitmap("background", "Plataformas/void.png", true);
 }
 }
   
@@ -111,7 +110,7 @@ const gramaMeio = {
     gramameio.w = 32;
     gramameio.h = 32;
     scene.addActor(gramameio);
-    gramameio.bitmap = new b5.Bitmap("background", "gramaMeio.png", true);
+    gramameio.bitmap = new b5.Bitmap("background", "Plataformas/gramaMeio.png", true);
     gramameio.initBody("static", false, true)
     gramameio.addFixture({width:32, height:32, type:b5.Shape.TypeBox});
   }
@@ -126,7 +125,7 @@ const gramaFimE = {
    plataformaFimE.h = 32;
    
    scene.addActor(plataformaFimE);
-   plataformaFimE.bitmap = new b5.Bitmap("background", "GramaFimCaida.png", true);
+   plataformaFimE.bitmap = new b5.Bitmap("background", "Plataformas/GramaFimCaida.png", true);
    plataformaFimE.initBody("static", false, true)
   plataformaFimE.addFixture({width:plataformaFimE.w, height:plataformaFimE.h, type:b5.Shape.TypeBox});
   }
@@ -140,7 +139,7 @@ const gramaFimD = {
    plataformaFimD.w = 32;
    plataformaFimD.h = 32;
    scene.addActor(plataformaFimD);
-   plataformaFimD.bitmap = new b5.Bitmap("background", "GramaFimCaidaD.png", true);
+   plataformaFimD.bitmap = new b5.Bitmap("background", "Plataformas/GramaFimCaidaD.png", true);
    plataformaFimD.initBody("static", false, false)
   plataformaFimD.addFixture({width:plataformaFimD.w, height:plataformaFimD.h, type:b5.Shape.TypeBox});
   }
@@ -154,7 +153,7 @@ const LateraisGramaE = {
    lateraisGramaE.w = 32;
    lateraisGramaE.h = 32;
    scene.addActor(lateraisGramaE);
-   lateraisGramaE.bitmap = new b5.Bitmap("background", "lateralGramaE.png", true);
+   lateraisGramaE.bitmap = new b5.Bitmap("background", "Plataformas/lateralGramaE.png", true);
    lateraisGramaE.initBody("static", false, false)
   lateraisGramaE.addFixture({width:lateraisGramaE.w, height:lateraisGramaE.h, type:b5.Shape.TypeBox});
   }
@@ -168,7 +167,7 @@ const LateralGramaD = {
    lateraisGramaD.w = 32;
    lateraisGramaD.h = 32;
    scene.addActor(lateraisGramaD);
-   lateraisGramaD.bitmap = new b5.Bitmap("background", "lateralGramaD.png", true);
+   lateraisGramaD.bitmap = new b5.Bitmap("background", "Plataformas/lateralGramaD.png", true);
    lateraisGramaD.initBody("static", false, false)
   lateraisGramaD.addFixture({width:lateraisGramaD.w, height:lateraisGramaD.h, type:b5.Shape.TypeBox});
   }
@@ -182,7 +181,7 @@ const MiniPlataforma = {
    miniplataforma.w = 32;
    miniplataforma.h = 32;
    scene.addActor(miniplataforma);
-   miniplataforma.bitmap = new b5.Bitmap("background", "miniPlataforma.png", true);
+   miniplataforma.bitmap = new b5.Bitmap("background", "Plataformas/miniPlataforma.png", true);
    miniplataforma.initBody("static", false, false)
   miniplataforma.addFixture({width:miniplataforma.w, height:miniplataforma.h, type:b5.Shape.TypeBox});
   }
@@ -196,7 +195,7 @@ const MiniplataformaMeio = {
    miniplataformaMeio.w = 32;
    miniplataformaMeio.h = 32;
    scene.addActor(miniplataformaMeio);
-   miniplataformaMeio.bitmap = new b5.Bitmap("background", "miniplataformaMeio.png", true);
+   miniplataformaMeio.bitmap = new b5.Bitmap("background", "Plataformas/miniplataformaMeio.png", true);
    miniplataformaMeio.initBody("static", false, false)
   miniplataformaMeio.addFixture({width:miniplataformaMeio.w, height:miniplataformaMeio.h, type:b5.Shape.TypeBox});
   }
@@ -229,7 +228,7 @@ const plaquinha = {
    Plaquinha.w = 16;
    Plaquinha.h = 16;
    scene.addActor(Plaquinha);
-   Plaquinha.bitmap = new b5.Bitmap("background", "Plaquinha.png", true);
+   Plaquinha.bitmap = new b5.Bitmap("background", "Plataformas/Plaquinha.png", true);
 }
 }
 
