@@ -1,5 +1,6 @@
 var teste = "teste3.png";
 var carregamento = 0;
+alert("testeee");
 var element = document.getElementById("header");
 
 var i = setInterval(function () {
