@@ -1,4 +1,4 @@
-var teste = "teste3.png"
+const teste = localStorage.getItem('escolha');
 alert("Reporte bugs para uma melhor experiência no game!!");
 var carregamento = 0;
 var element = document.getElementById("header");
@@ -309,12 +309,12 @@ element.innerHTML = "Carregado %"+ carregamento
  scene.camera_y=player.y+20;
  buttonLeft.x = player.x-80;
  buttonLeft.y = player.y+40;
- buttonRight.x = player.x-160;
+ buttonRight.x = player.x-140;
  buttonRight.y = player.y+40;
- labelPontos.x = player.x-160;
+ labelPontos.x = player.x-120;
  labelPontos.y = player.y-20;
  buttonUp.y=player.y+40;
- buttonUp.x=player.x+140;
+ buttonUp.x=player.x+120;
 };
  var caixaDcair = new b5.Actor();
  caixaDcair.x = 50;
