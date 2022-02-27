@@ -1,31 +1,155 @@
-<!DOCTYPE html>  
-<html>  
+<html>
 <head>
-    <meta charset='utf-8'>  
-    <meta name='viewport' content='width=device-width,user-scalable=no' />
-    <meta name='apple-mobile-web-app-capable' content='yes'>
-    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
-    <link href="./style.css" rel="stylesheet">
-</head> 
-
-<script src="scene35.js"></script>
+<title>teste</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+</head>
 <body>
-	<button class="button"><a href="sceneJogo.html">Novo jogo</a></button>
-	<div class="container">
-  <img src="yetEscolha.png" alt="Avatar" class="image">
-  <div class="middle">
-    <button class="text" onClick="yete()">Yet</button>
-</div>
-	<div class="container">
-  <img src="bixin.png" alt="Avatar" class="image">
-  <div class="middle">
-    <button class="text" onClick="monstrinho()">Monstrinho</button>
-</div>
-	<div class="container">
-  <img src="douradinhoEscolha.png" alt="Avatar" class="image">
-  <div class="middle">
-    <button class="text" onClick="douradinho()">Yet dourado</button>
-</div>
-	<p>Jogo esta em teste, a tela do jogo esta em pé pois é so uma versao beta</p>
+<style type="text/css">
+body{
+background-image: url(void.png);
+}
+#img0{
+width: 250px;
+height: 80px;
+position: absolute;
+left: 280px;
+top: 0px;
+z-index: 99;
+}
+#img1{
+width: 120px;
+height: 60px; 
+position: absolute;
+left: 350px;
+top: 130px;
+z-index: 100;	 
+}
+#img2{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 101;
+left: 0px;
+top: 290px;
+}
+#img3{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 102;
+left: 200px;
+top: 290px;
+}
+#img4{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 103;
+left: 50px;
+top: 290px;
+}
+#player0{
+width: 40px;
+height: 40px;
+position: absolute; 
+z-index: 104;
+left: 50px;
+top: 250px;
+}
+#player1{
+transform: scaleX(-1);
+width: 40px;
+height: 40px;
+position: absolute; 
+z-index: 105;
+left: 430px;
+top: 250px;
+}
+#player2{
+transform: scaleX(-1);
+width: 40px;
+height: 40px;
+position: absolute; 
+z-index: 106;
+left: 780px;
+top: 250px;
+}
+#placa{
+width: 20px;
+height: 20px;
+position: absolute; 
+z-index: 107;
+left: 750px;
+top: 270px;
+}
+#detalhe{
+width: 55px;
+height: 25px;
+position: absolute; 
+z-index: 108;
+left: 370px;
+top: 265px;
+}
+#meio0{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 103;
+left: 390px;
+top: 290px;
+}
+#meio1{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 103;
+left: 773px;
+top: 290px;
+}
+#meio2{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 103;
+left: 440px;
+top: 290px;
+}
+#meio3{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 103;
+left: 340px;
+top: 290px;
+}
+#meio4{
+width: 50px;
+height: 50px;
+position: absolute; 
+z-index: 103;
+left: 723px;
+top: 290px;
+}
+</style>
+<img id="img0" src="txt.png">
+<img id="img1" src="button_play.png" onclick="btn_touch()">
+<img id="img2" src="gramaMeio.png">
+<img id="img4" src="gramaFimCaidaD.png">
+<img id="player0" src="bixin.png">
+<img id="player1" src="douradinhoEscolha.png">
+<img id="player2" src="yetEscolha.png">
+<img id="placa" src="Plaquinha.png">
+<img id="detalhe" src="Detalhes1.png">
+<img id="meio0" src="gramaMeio.png">
+<img id="meio1" src="gramaMeio.png">
+<img id="meio2" src="gramaFimCaidaD.png">
+<img id="meio3" src="gramaFimCaida.png">
+<img id="meio4" src="gramaFimCaida.png">
+<script type="text/javascript">
+function btn_touch(){
+window.location.href="selecionar_personagem.html";
+}
+</script>
 </body>
 </html>
