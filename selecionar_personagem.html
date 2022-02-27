@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>selecionar personagem</title>
+<meta charset="utf'8">
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+<style type="text/css">
+body{
+background-image: url(void.png);
+}
+#img0{
+position: absolute;
+z-index: 99;
+width: 250px;
+height: 50px;
+left: 300px;
+}
+#img1{
+position: absolute;
+z-index: 100;
+width: 180px;
+height: 180px;
+top: 100px;
+left: 40px;
+}
+#img2{
+position: absolute;
+z-index: 101;
+width: 180px;
+height: 180px;
+top: 100px;
+left: 230px;
+}
+#img3{
+position: absolute;
+z-index: 102;
+width: 180px;
+height: 180px;
+top: 100px;
+left: 420px;
+}
+#btn_back{
+position: absolute;
+z-index: 103;
+left: 650px;
+top: 265;
+}
+#btn_sel1{
+position: absolute;
+z-index: 104;
+width: 120px;
+height: 50px;
+top: 285px;
+left: 65px;
+}
+#btn_sel2{
+position: absolute;
+z-index: 105;
+width: 120px;
+height: 50px;
+top: 285px;
+left: 260px;
+}
+#btn_sel3{
+position: absolute;
+z-index: 106;
+width: 120px;
+height: 50px;
+top: 285px;
+left: 445px;
+}
+#btn_play{
+position: absolute;
+z-index: 107;
+left: 650px;
+top: 190px;
+}
+@keyframes anigo{
+0%{transform: translateY(-1px);}
+5%{transform: translateY(-2px);}
+10%{transform: translateY(-3px);}
+15%{transform: translateY(-4px);}
+20%{transform: translateY(-5px);}
+25%{transform: translateY(-6px);}
+30%{transform: translateY(-7px);}
+35%{transform: translateY(-8px);}
+40%{transform: translateY(-9px);}
+45%{transform: translateY(-10px);}
+50%{transform: translateY(-10px);}
+55%{transform: translateY(-9px);}
+60%{transform: translateY(-8px);}
+65%{transform: translateY(-7px);}
+70%{transform: translateY(-6px);}
+75%{transform: translateY(-5px);}
+80%{transform: translateY(-4px);}
+85%{transform: translateY(-3px);}
+90%{transform: translateY(-2px);}
+95%{transform: translateY(-1px);}
+100%{transform: translateY(0px);}
+}
+#txt0{
+color: white;
+position: absolute;
+left: 95px;
+top: 75px;
+z-index: 108;
+animation-name: anigo;
+animation-duration: 4s;	
+animation-iteration-count: infinite;
+}
+#txt1{
+color: white;
+position: absolute;
+left: 240px;
+top: 75px;
+z-index: 108;
+animation-name: anigo;
+animation-duration: 4s;	
+animation-iteration-count: infinite;
+}
+#txt2{
+color: white;
+position: absolute;
+left: 430px;
+top: 75px;
+z-index: 108;
+animation-name: anigo;
+animation-duration: 4s;	
+animation-iteration-count: infinite;
+}
+</style>
+<img id="img0" src="txt1.png">
+<img id="img1" src="bixin.png">
+<img id="img2" src="douradinhoEscolha.png">
+<img id="img3" src="yetEscolha.png">
+<img id="btn_back" src="button_back.png">
+<img id="btn_sel1" src="button_select.png" onClick="monstrinho()">
+<img id="btn_sel2" src="button_select.png" onClick="yete()">
+<img id="btn_sel3" src="button_select.png"
+onClick="douradinho()">
+<img id="btn_play" src="button_play.png" onclick="play_click()">
+<h4 id="txt0">BIXIN</h4>
+<h4 id="txt1">YET AMARELO</h4>
+<h4 id="txt2">YET BRANCO</h4>
+<script type="text/javascript">
+function play_click(){
+window.location.href="sceneJogo.html";
+}
+let personagem = "teste11.png";
+
+function monstrinho(){
+personagem = "teste11.png";
+localStorage.setItem('escolha', personagem);
+alert("Escolhido com sucesso", personagem)
+}
+function yete(){
+personagem = "teste6.png";
+localStorage.setItem('escolha', personagem);
+alert("Escolhido com sucesso", personagem)
+}
+function douradinho(){
+personagem = "teste3.png";
+localStorage.setItem('escolha', personagem);
+alert("Escolhido com sucesso", personagem)
+}
+</script>
+</body>
+</html>
