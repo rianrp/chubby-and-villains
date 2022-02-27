@@ -49,7 +49,7 @@ element.innerHTML = "Carregado %"+ carregamento
 var player = new b5.Actor();
   player.fill_style = "#f06965"; 
   player.x = 10;
-  player.y = -10;
+  player.y = -20;
   player.w = 20;
   player.h= 20;
   scene.addActor(player);
@@ -81,158 +81,22 @@ var player = new b5.Actor();
  player.atlas.addAnim("jump",[11,12,13,14,15],05)
  //player.atlas.addAnim("idleD", [18,19,20,19],05);
   player.playAnim("idle")
-  player.initBody("dynamic", false, true);
-  player.addFixture({width:player.w, height:player.h, type:b5.Shape.TypeBox});
-  player.body.SetLinearVelocity(new vec(0,0));
-    player.onCollisionStart = function (gramameio) {
-      player.body.SetLinearVelocity(new vec(0,01))
+  player.initBody("dynamic", true, false);
+player.type = b5.Shape.TypeCircle;
+ player.width = 500;
+  player.addFixture({width:10, height:20, type:b5.Shape.TypeCircle});
+  player.body.SetLinearVelocity(new vec(0,1));
+    player.onCollisionStart = function () {
+      player.body.SetLinearVelocity(new vec(0,3))
       pulo = true;
       };
   //objetos 
-  const Void = {
-  desenhar(){
-   var Vazio = new b5.Actor();
-   Vazio.fill_style = "#6abe82";
-   Vazio.x = posX;
-   Vazio.y = posY;
-   Vazio.w = 32;
-   Vazio.h = 32;
-   scene.addActor(Vazio);
-   Vazio.bitmap = new b5.Bitmap("background", "void.png", true);
-}
-}
+  player.onTick = function(){
+    if(pontos==100){
+      alert("Voce coletou todas as moedas");
+    }
+  }
   
-const gramaMeio = {
-  desenhar(){
-    var gramameio = new b5.Actor();
-    gramameio.fill_style = "#6abe82";
-    gramameio.x = posX;
-    gramameio.y = posY;
-    gramameio.w = 32;
-    gramameio.h = 32;
-    scene.addActor(gramameio);
-    gramameio.bitmap = new b5.Bitmap("background", "gramaMeio.png", true);
-    gramameio.initBody("static", false, true)
-    gramameio.addFixture({width:32, height:32, type:b5.Shape.TypeBox});
-  }
-}
-const gramaFimE = {
-  desenhar(){
-   var plataformaFimE= new b5.Actor();
-   plataformaFimE.fill_style = "#6abe82";
-   plataformaFimE.x = posX;
-   plataformaFimE.y = posY;
-   plataformaFimE.w = 32;
-   plataformaFimE.h = 32;
-   
-   scene.addActor(plataformaFimE);
-   plataformaFimE.bitmap = new b5.Bitmap("background", "GramaFimCaida.png", true);
-   plataformaFimE.initBody("static", false, true)
-  plataformaFimE.addFixture({width:plataformaFimE.w, height:plataformaFimE.h, type:b5.Shape.TypeBox});
-  }
-}
-const gramaFimD = {
-  desenhar(){
-   var plataformaFimD= new b5.Actor();
-   plataformaFimD.fill_style = "#6abe82";
-   plataformaFimD.x = posX;
-   plataformaFimD.y = posY;
-   plataformaFimD.w = 32;
-   plataformaFimD.h = 32;
-   scene.addActor(plataformaFimD);
-   plataformaFimD.bitmap = new b5.Bitmap("background", "GramaFimCaidaD.png", true);
-   plataformaFimD.initBody("static", false, false)
-  plataformaFimD.addFixture({width:plataformaFimD.w, height:plataformaFimD.h, type:b5.Shape.TypeBox});
-  }
-}
-const LateraisGramaE = {
-  desenhar(){
-   var lateraisGramaE= new b5.Actor();
-   lateraisGramaE.fill_style = "#6abe82";
-   lateraisGramaE.x = posX;
-   lateraisGramaE.y = posY;
-   lateraisGramaE.w = 32;
-   lateraisGramaE.h = 32;
-   scene.addActor(lateraisGramaE);
-   lateraisGramaE.bitmap = new b5.Bitmap("background", "lateralGramaE.png", true);
-   lateraisGramaE.initBody("static", false, false)
-  lateraisGramaE.addFixture({width:lateraisGramaE.w, height:lateraisGramaE.h, type:b5.Shape.TypeBox});
-  }
-}
-const LateralGramaD = {
-  desenhar(){
-   var lateraisGramaD= new b5.Actor();
-   lateraisGramaD.fill_style = "#6abe82";
-   lateraisGramaD.x = posX;
-   lateraisGramaD.y = posY;
-   lateraisGramaD.w = 32;
-   lateraisGramaD.h = 32;
-   scene.addActor(lateraisGramaD);
-   lateraisGramaD.bitmap = new b5.Bitmap("background", "lateralGramaD.png", true);
-   lateraisGramaD.initBody("static", false, false)
-  lateraisGramaD.addFixture({width:lateraisGramaD.w, height:lateraisGramaD.h, type:b5.Shape.TypeBox});
-  }
-}
-const MiniPlataforma = {
-  desenhar(){
-   var miniplataforma= new b5.Actor();
-   miniplataforma.fill_style = "#6abe82";
-   miniplataforma.x = posX;
-   miniplataforma.y = posY;
-   miniplataforma.w = 32;
-   miniplataforma.h = 32;
-   scene.addActor(miniplataforma);
-   miniplataforma.bitmap = new b5.Bitmap("background", "miniPlataforma.png", true);
-   miniplataforma.initBody("static", false, false)
-  miniplataforma.addFixture({width:miniplataforma.w, height:miniplataforma.h, type:b5.Shape.TypeBox});
-  }
-}
-const MiniplataformaMeio = {
-  desenhar(){
-   var miniplataformaMeio= new b5.Actor();
-   miniplataformaMeio.fill_style = "#6abe82";
-   miniplataformaMeio.x = posX;
-   miniplataformaMeio.y = posY;
-   miniplataformaMeio.w = 32;
-   miniplataformaMeio.h = 32;
-   scene.addActor(miniplataformaMeio);
-   miniplataformaMeio.bitmap = new b5.Bitmap("background", "miniplataformaMeio.png", true);
-   miniplataformaMeio.initBody("static", false, false)
-  miniplataformaMeio.addFixture({width:miniplataformaMeio.w, height:miniplataformaMeio.h, type:b5.Shape.TypeBox});
-  }
-}
-const Moedas = {
-  desenhar(){
-   var moeda = new b5.RectActor();
- moeda.fill_style = "#ffc301";
- moeda.x = posX;
- moeda.y = posY;
- moeda.w = 10;
- moeda.h = 10;
- moeda.corner_radius = 4;
- scene.addActor(moeda);
- moeda.initBody("static", false, false)
- moeda.addFixture({width:10, height:10, type:b5.Shape.TypeBox})
- moeda.onCollisionStart = function (contact) {
-      pontos+=10;
-      scene.removeActor(moeda)
- };
-  }
-}
-//detalhes
-const plaquinha = {
-  desenhar(){
-   var Plaquinha = new b5.Actor();
-   Plaquinha.fill_style = "#6abe82";
-   Plaquinha.x = posX;
-   Plaquinha.y = posY+8;
-   Plaquinha.w = 16;
-   Plaquinha.h = 16;
-   scene.addActor(Plaquinha);
-   Plaquinha.bitmap = new b5.Bitmap("background", "Plaquinha.png", true);
-}
-}
-
   carregamento = 20;
   element = document.getElementById("header");
 element.innerHTML = "Carregado %"+ carregamento
@@ -262,7 +126,8 @@ element.innerHTML = "Carregado %"+ carregamento
   plataforma.onCollisionStart = function (contact) {
       console.log("Colisão com plataforma")
       pulo =true;
- };*/
+ };
+ 
  for(var i = 0; i < desenharMapa.length; i++){
   for(var f = 0; f < desenharMapa[i].length; f++){
     if(desenharMapa[i][f]==1){
@@ -300,6 +165,28 @@ element.innerHTML = "Carregado %"+ carregamento
   posX =0;
   posY+=32;
 }
+*/
+//Mapas
+function mapa(){
+var actor1 = new b5.Actor();actor1.x = 33;actor1.y = 31;actor1.h = 32;actor1.w = 32;actor1.bitmap = new b5.Bitmap("background", "gramaMeio.png", true); scene.addActor(actor1);actor1.initBody("static", false, true);actor1.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor2 = new b5.Actor();actor2.x = 64;actor2.y = 31;actor2.h = 32;actor2.w = 32;actor2.bitmap = new b5.Bitmap("background", "gramaMeio.png", true); scene.addActor(actor2);actor2.initBody("static", false, true);actor2.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor3 = new b5.Actor();actor3.x = 96;actor3.y = 31;actor3.h = 32;actor3.w = 32;actor3.bitmap = new b5.Bitmap("background", "gramaMeio.png", true); scene.addActor(actor3);actor3.initBody("static", false, true);actor3.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor4 = new b5.Actor();actor4.x = 1;actor4.y = 31;actor4.h = 32;actor4.w = 32;actor4.bitmap = new b5.Bitmap("background", "gramaMeio.png", true); scene.addActor(actor4);actor4.initBody("static", false, true);actor4.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor5 = new b5.Actor();actor5.x = -30;actor5.y = 31;actor5.h = 32;actor5.w = 32;actor5.bitmap = new b5.Bitmap("background", "gramaMeio.png", true); scene.addActor(actor5);actor5.initBody("static", false, true);actor5.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor6 = new b5.Actor();actor6.x = -60;actor6.y = 31;actor6.h = 32;actor6.w = 32;actor6.bitmap = new b5.Bitmap("background", "gramaFimCaida.png", true); scene.addActor(actor6);actor6.initBody("static", false, true);actor6.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor7 = new b5.Actor();actor7.x = 68;actor7.y = -15;actor7.h = 32;actor7.w = 32;actor7.bitmap = new b5.Bitmap("background", "gramaFimCaida.png", true); scene.addActor(actor7);actor7.initBody("static", false, true);actor7.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor8 = new b5.Actor();actor8.x = 120;actor8.y = 31;actor8.h = 32;actor8.w = 32;actor8.bitmap = new b5.Bitmap("background", "gramaFimCaidaD.png", true); scene.addActor(actor8);actor8.initBody("static", false, true);actor8.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor9 = new b5.Actor();actor9.x = 99;actor9.y = -15;actor9.h = 32;actor9.w = 32;actor9.bitmap = new b5.Bitmap("background", "gramaFimCaidaD.png", true); scene.addActor(actor9);actor9.initBody("static", false, true);actor9.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor10 = new b5.Actor();actor10.x = 67;actor10.y = -1;actor10.h = 32;actor10.w = 32;actor10.bitmap = new b5.Bitmap("background", "lateralGramaE.png", true); scene.addActor(actor10);actor10.initBody("static", false, true);actor10.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor11 = new b5.Actor();actor11.x = 97;actor11.y = -1;actor11.h = 32;actor11.w = 32;actor11.bitmap = new b5.Bitmap("background", "lateralGramaD.png", true); scene.addActor(actor11);actor11.initBody("static", false, true);actor11.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor12 = new b5.Actor();actor12.x = 176;actor12.y = -18;actor12.h = 32;actor12.w = 32;actor12.bitmap = new b5.Bitmap("background", "miniPlataforma.png", true); scene.addActor(actor12);actor12.initBody("static", false, true);actor12.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor13 = new b5.Actor();actor13.x = 176;actor13.y = 14;actor13.h = 32;actor13.w = 32;actor13.bitmap = new b5.Bitmap("background", "MiniPlataformaMeio.png", true); scene.addActor(actor13);actor13.initBody("static", false, true);actor13.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor14 = new b5.Actor();actor14.x = 177;actor14.y = 38;actor14.h = 32;actor14.w = 32;actor14.bitmap = new b5.Bitmap("background", "MiniPlataformaMeio.png", true); scene.addActor(actor14);actor14.initBody("static", false, true);actor14.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor15 = new b5.Actor();actor15.x = 233;actor15.y = -28;actor15.h = 32;actor15.w = 32;actor15.bitmap = new b5.Bitmap("background", "MiniPlataformaMeio.png", true); scene.addActor(actor15);actor15.initBody("static", false, true);actor15.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor16 = new b5.Actor();actor16.x = 234;actor16.y = 4;actor16.h = 32;actor16.w = 32;actor16.bitmap = new b5.Bitmap("background", "MiniPlataformaMeio.png", true); scene.addActor(actor16);actor16.initBody("static", false, true);actor16.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor17 = new b5.Actor();actor17.x = 235;actor17.y = 36;actor17.h = 32;actor17.w = 32;actor17.bitmap = new b5.Bitmap("background", "MiniPlataformaMeio.png", true); scene.addActor(actor17);actor17.initBody("static", false, true);actor17.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor18 = new b5.Actor();actor18.x = 232;actor18.y = -51;actor18.h = 32;actor18.w = 32;actor18.bitmap = new b5.Bitmap("background", "miniPlataforma.png", true); scene.addActor(actor18);actor18.initBody("static", false, true);actor18.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor19 = new b5.Actor();actor19.x = 232;actor19.y = -51;actor19.h = 32;actor19.w = 32;actor19.bitmap = new b5.Bitmap("background", "miniPlataforma.png", true); scene.addActor(actor19);actor19.initBody("static", false, true);actor19.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor20 = new b5.Actor();actor20.x = 232;actor20.y = -51;actor20.h = 32;actor20.w = 32;actor20.bitmap = new b5.Bitmap("background", "miniPlataforma.png", true); scene.addActor(actor20);actor20.initBody("static", false, true);actor20.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor21 = new b5.Actor();actor21.x = 293;actor21.y = 33;actor21.h = 32;actor21.w = 32;actor21.bitmap = new b5.Bitmap("background", "MiniPlataformaMeio.png", true); scene.addActor(actor21);actor21.initBody("static", false, true);actor21.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor22 = new b5.Actor();actor22.x = 357;actor22.y = 0;actor22.h = 32;actor22.w = 32;actor22.bitmap = new b5.Bitmap("background", "gramaFimCaida.png", true); scene.addActor(actor22);actor22.initBody("static", false, true);actor22.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor23 = new b5.Actor();actor23.x = 389;actor23.y = 0;actor23.h = 32;actor23.w = 32;actor23.bitmap = new b5.Bitmap("background", "gramaFimCaidaD.png", true); scene.addActor(actor23);actor23.initBody("static", false, true);actor23.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor24 = new b5.Actor();actor24.x = 359;actor24.y = 32;actor24.h = 32;actor24.w = 32;actor24.bitmap = new b5.Bitmap("background", "lateralGramaE.png", true); scene.addActor(actor24);actor24.initBody("static", false, true);actor24.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor25 = new b5.Actor();actor25.x = 391;actor25.y = 32;actor25.h = 32;actor25.w = 32;actor25.bitmap = new b5.Bitmap("background", "lateralGramaD.png", true); scene.addActor(actor25);actor25.initBody("static", false, true);actor25.addFixture({width:32, height:32, type:b5.Shape.TypeBox}); var actor26 = new b5.Actor();actor26.x = 292;actor26.y = 24;actor26.h = 32;actor26.w = 32;actor26.bitmap = new b5.Bitmap("background", "MiniPlataformaMeio.png", true); scene.addActor(actor26);actor26.initBody("static", false, true);actor26.addFixture({width:32, height:32, type:b5.Shape.TypeBox});
+var actorkdkdkdks1 = new b5.Actor();actorkdkdkdks1.x = 292;actorkdkdkdks1.y = -7;actorkdkdkdks1.h = 32;actorkdkdkdks1.w = 32;actorkdkdkdks1.bitmap = new b5.Bitmap("background", "miniPlataforma.png", true); scene.addActor(actorkdkdkdks1);actorkdkdkdks1.initBody("static", false, true);actorkdkdkdks1.addFixture({width:32, height:32, type:b5.Shape.TypeBox});
+}
+
+function moedas(){
+//Moedas
+var moedas2 = new b5.RectActor();moedas2.x = 14;moedas2.y = -1;moedas2.h = 20;moedas2.w = 20;moedas2.fill_style = "#f6b351";scene.addActor(moedas2);moedas2.corner_radius = 10;moedas2.initBody("static", false, true);moedas2.addFixture({width:20, height:20, type:b5.Shape.TypeBox});moedas2.onCollisionStart = function (contact) {moedas2.destroy(); pontos+=10;}; var moedas3 = new b5.RectActor();moedas3.x = -54;moedas3.y = -1;moedas3.h = 20;moedas3.w = 20;moedas3.fill_style = "#f6b351";scene.addActor(moedas3);moedas3.corner_radius = 10;moedas3.initBody("static", false, true);moedas3.addFixture({width:20, height:20, type:b5.Shape.TypeBox});moedas3.onCollisionStart = function (contact) {moedas3.destroy(); pontos+=10;}; var moedas4 = new b5.RectActor();moedas4.x = 81;moedas4.y = -49;moedas4.h = 20;moedas4.w = 20;moedas4.fill_style = "#f6b351";scene.addActor(moedas4);moedas4.corner_radius = 10;moedas4.initBody("static", false, true);moedas4.addFixture({width:20, height:20, type:b5.Shape.TypeBox});moedas4.onCollisionStart = function (contact) {moedas4.destroy(); pontos+=10;}; var moedas5 = new b5.RectActor();moedas5.x = 177;moedas5.y = -55;moedas5.h = 20;moedas5.w = 20;moedas5.fill_style = "#f6b351";scene.addActor(moedas5);moedas5.corner_radius = 10;moedas5.initBody("static", false, true);moedas5.addFixture({width:20, height:20, type:b5.Shape.TypeBox});moedas5.onCollisionStart = function (contact) {moedas5.destroy(); pontos+=10;}; var moedas6 = new b5.RectActor();moedas6.x = 231;moedas6.y = -89;moedas6.h = 20;moedas6.w = 20;moedas6.fill_style = "#f6b351";scene.addActor(moedas6);moedas6.corner_radius = 10;moedas6.initBody("static", false, true);moedas6.addFixture({width:20, height:20, type:b5.Shape.TypeBox});moedas6.onCollisionStart = function (contact) {moedas6.destroy(); pontos+=10;}; var moedas7 = new b5.RectActor();moedas7.x = 291;moedas7.y = -46;moedas7.h = 20;moedas7.w = 20;moedas7.fill_style = "#f6b351";scene.addActor(moedas7);moedas7.corner_radius = 10;moedas7.initBody("static", false, true);moedas7.addFixture({width:20, height:20, type:b5.Shape.TypeBox});moedas7.onCollisionStart = function (contact) {moedas7.destroy(); pontos+=10;};
+}
+//finall
+function final(){
+var final8 = new b5.Actor();final8.x = 393;final8.y = -26;final8.h = 32;final8.w = 32;final8.bitmap = new b5.Bitmap("background", "Plaquinha.png", true); scene.addActor(final8);final8.initBody("static", false, true);final8.addFixture({width:32, height:32, type:b5.Shape.TypeBox});final8.onCollisionStart = function (contact){if(pontos==60){alert("obrigado por finalizar meu game, deu muito trabalho para fazer")}}
+};
+
+mapa();
+moedas();
+final();
+valuemoedas = document.getElementById("moedasColetadas");
+valuemoedas.innerHTML = "Moedas "+pontos
+
 carregamento = 30;
 element = document.getElementById("header");
 element.innerHTML = "Carregado %"+ carregamento
