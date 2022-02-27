@@ -184,8 +184,6 @@ var final8 = new b5.Actor();final8.x = 393;final8.y = -26;final8.h = 32;final8.w
 mapa();
 moedas();
 final();
-valuemoedas = document.getElementById("moedasColetadas");
-valuemoedas.innerHTML = "Moedas "+pontos
 
 carregamento = 30;
 element = document.getElementById("header");
