@@ -202,15 +202,11 @@ element.innerHTML = "Carregado %"+ carregamento
  buttonUp.x=player.x+120;
  buttonLeft.dock_x = player.Dock_Left;
  buttonLeft.dock_y = player.Dock_Bottom;
-buttonLeft.ignore_camera=true;
 buttonRight.dock_x = player.Dock_Left;
  buttonRight.dock_y = player.Dock_Bottom;
-buttonRight.ignore_camera=true;
 buttonUp.dock_x = player.Dock_Left;
  buttonUp.dock_y = player.Dock_Bottom;
-buttonUp.ignore_camera=true;
 };
-
  var caixaDcair = new b5.Actor();
  caixaDcair.x = 50;
  caixaDcair.y = 150;
@@ -278,9 +274,10 @@ buttonUp.ignore_camera=true;
  buttonUp.active = true;
  buttonUp.onTick=function(){
    buttonUp.dirty();
+
  }
- 
- 
+
+
  labelPontos = new b5.LabelActor();
  labelPontos.x = -80;
  labelPontos.y = -170;
