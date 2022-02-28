@@ -198,14 +198,10 @@ element.innerHTML = "Carregado %"+ carregamento
  buttonRight.y = player.y+40;
  labelPontos.x = player.x-120;
  labelPontos.y = player.y-20;
- buttonUp.y=player.y+40;
- buttonUp.x=player.x+120;
  buttonLeft.dock_x = player.Dock_Left;
  buttonLeft.dock_y = player.Dock_Bottom;
-buttonRight.dock_x = player.Dock_Left;
+ buttonRight.dock_x = player.Dock_Left;
  buttonRight.dock_y = player.Dock_Bottom;
-buttonUp.dock_x = player.Dock_Left;
- buttonUp.dock_y = player.Dock_Bottom;
 };
  var caixaDcair = new b5.Actor();
  caixaDcair.x = 50;
@@ -263,7 +259,10 @@ buttonUp.dock_x = player.Dock_Left;
  buttonUp.type = b5.Shape.TypeCircle;
  buttonUp.width = 300;
  scene.clip_shape = buttonUp;
- buttonUp.x = 10;
+ buttonUp.ignore_camera=true;
+ buttonUp.filled = true;
+ buttonUp.margin = [0, 0, 20, 0];
+ buttonUp.x = 120;
  buttonUp.y = 10;
  buttonUp.h = 50;
  buttonUp.w =50;
@@ -274,9 +273,7 @@ buttonUp.dock_x = player.Dock_Left;
  buttonUp.active = true;
  buttonUp.onTick=function(){
    buttonUp.dirty();
-
  }
-
 
  labelPontos = new b5.LabelActor();
  labelPontos.x = -80;
