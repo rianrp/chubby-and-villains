@@ -11,6 +11,51 @@
       *{
         margin:0px;
       }
+      .botaoE{
+width: 350px;
+    text-align: top;
+    padding: 0px 0px;
+    border: 0px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 18px;
+background-image: url(botaoleft.png);
+  background-size: cover;
+ width: 90px;
+ height: 90px;
+margin-left: 5%;
+      }
+      .botaoD{
+    width: 350px;
+    text-align: top;
+    padding: 0px 0px;
+    border: 0px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0);
+background-image: url(botaoright.png);
+  background-size: cover;
+ width: 90px;
+ height: 90px;
+ margin-left: 5%;
+      }
+      .botaopulo{
+width: 350px;
+    text-align: top;
+background-color: rgba(0, 0, 0, 0);
+ width: 90px;
+ height: 90px;
+ float: right;
+background-image: url(pulo.png);
+border: 0px;
+  background-size: cover;
+margin-right: 5%;
+      }
+      
+.controles{
+position:absolute;
+  bottom:50px;
+  width: 100%;
+}
     </style>
 </head> 
 <script src="scene33.js"></script>
@@ -23,6 +68,11 @@
   <div id="divgame" style="display: none">
 	<canvas id='gamecanvas' style="background-image:url(testedeImagem.png);">
 	</canvas>
+</div>
+<div class="controles">
+<input type="button" value="" id="buttonD" class="botaoE">
+  <input type="button" value="" id="buttonE" class="botaoD">
+  <input type="button" value="" id="buttonUp" class="botaopulo">
 </div>
 </body> 
 </html>
