@@ -252,10 +252,10 @@ fundoA.y=player.y-30;
  labelPontos = new b5.LabelActor();
  labelPontos.x = -80;
  labelPontos.y = -170;
- labelPontos.font = "10pt Calibri";  
+ labelPontos.font = "5pt Calibri";  
  labelPontos.text_align = "center";     
  labelPontos.text_baseline = "middle";
- labelPontos.fill_style = "#a40a3b";    
+ labelPontos.fill_style = "#383a3e";    
  labelPontos.text = "Moeda: "+ pontos;
  scene.addActor(labelPontos)
  labelPontos.onTick=function(){
@@ -264,11 +264,11 @@ fundoA.y=player.y-30;
  }
 labelFps = new b5.LabelActor();
  labelFps.x = -80;
- labelFps.y = -170;
- labelFps.font = "10pt Calibri";  
+ labelFps.y = -120;
+ labelFps.font = "5pt Calibri";  
  labelFps.text_align = "center";     
  labelFps.text_baseline = "middle";
- labelFps.fill_style = "#a40a3b";    
+ labelFps.fill_style = "#383a3e";    
  labelFps.text = "Moeda: "+ pontos;
  scene.addActor(labelFps)
  labelFps.onTick=function(){
